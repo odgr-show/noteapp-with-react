@@ -1,0 +1,57 @@
+button {
+    background: none;
+    border: none;
+    color: #08c;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.app-sidebar {
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+
+        & > h1 {
+            margin: 0;
+        }
+    }
+
+    &__notes {
+        height: calc(100vh - 78px);
+        overflow-y: scroll;
+    }
+
+    &__note {
+        padding: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &.active {
+            background: #dcd4d4;
+        }
+
+        & > p {
+            margin: 10px 0;
+        }
+
+        & > small {
+            color: #999;
+        }
+
+        &__title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &:hover {
+            background: #dcd4d4;
+        }
+    }
+}
