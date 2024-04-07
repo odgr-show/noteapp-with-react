@@ -15,11 +15,21 @@ export const App = () => {
         localStorage.setItem("notes", JSON.stringify(notes));
     }, [notes]);
 
+    // useEffect(() => {
+    //     setActiveNote(notes[0].id);
+    // }, []);
+
+    useEffect(() => {
+        if (notes.length > 0) {
+            setActiveNote(notes[0].id);
+        }
+    }, [notes]);
+
     const onAddNote = () => {
         // console.log("新しくノートが追加されました。");
         const newNote = {
             id: uuid(),
-            title: "",
+            title: "新しいノート",
             content: "",
             modDate: Date.now(),
         };
